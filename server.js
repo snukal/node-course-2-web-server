@@ -58,6 +58,14 @@ app.get('/about', (req, res) => {                        // We use '/' for the u
     });
 });
 
+app.get('/projects', (req, res) => {                        // We use '/' for the url because we need the root; req-request; res-response
+    res.render('projects.hbs', {
+        pageTitle : 'Portfolio Page',
+        portfolioMessage: 'GOGOGOGO Portfolio!',
+        currentYear: new Date().getFullYear()
+    });
+});
+
 app.get('/bad', (req, res) => {                        // We use '/' for the url because we need the root; req-request; res-response
      res.send({
          errorMessage: 'Kurac!'
